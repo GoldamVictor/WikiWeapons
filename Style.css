@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none; 
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+.header{
+    min-height: 100vh;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,1),
+        rgba(255,255,255,0.1)), url(images/BG_Pagina.jpg);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+/* No quiere funcionar los ajustes a enlaces "a"
+funcionan si sólo dejo el ul li, pero no aplica hoover*/
+.menu .navbar ul li {
+    color: #FFFDFC;
+    font-size: 18px;
+    padding: 20px;
+    font-weight: 600;
+    display: block;
+}
+
+.menu .navbar ul li a:hover{
+    color: #CE967B;
+}
+
+/*-----------------------------------------------*/
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+
+.header-content{
+    text-align: center;
+}
+
+.header-content h1{
+    font-size: 75px;
+    line-height: 80px;
+    color: #f9fafc;
+    margin-bottom: 35px;
+}
+
+.header-content p{
+    font-size: 16px;
+    color: #c5c5c5;
+    padding: 0 25px;
+    margin-bottom: 25px;
+
+}
+
+.btn-1{
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #DB302A;
+    color: #f9fafc;
+    text-transform: uppercase;
+}
+
+.btn-1:hover{
+    background-color: rgb(0, 0, 0);
+}
+
+/*SECCIÓN WEAPONS*/
+
+.weapons {
+    padding: 100px 0;
+    background-color: #2b2b2b;
+    position: relative;
+}
+
+.weapons-content {
+    text-align: center;
+}
+
+.weapons-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #DB302A;
+    text-transform: uppercase;
+    padding: 0 250px;
+    margin-bottom: 15px;
+}
+
+.txt-p{
+    font-size: 16px;
+    color: #dddddd;
+    padding: 0 250px;
+    margin-bottom: 35px;
+}
+
+.weapons-group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.weapons-1 img{
+    width: 200px;
+}
+
+.weapons-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+
+
+/*Texto*/
+
+p{
+    font-weight: 400;
+    font-size: 15pt;
+}
+
+h1{
+    font-weight: 500;
+    font-size: 20pt;
+}
+
+h3{
+    font-weight: 600;
+    font-size: 20pt;
+    color: dimgray;
+}
