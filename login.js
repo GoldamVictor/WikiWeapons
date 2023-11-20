@@ -26,7 +26,7 @@ const loginButtonHandler = async () => {
   const userData = { email: userEmail, password: userPassword, };
   
   try{
-    const response = await fetch("http://localhost:3000/auth", {
+    const response = await fetch("https://ypsh82-3000.csb.app/auth", {
       method: "POST",
       headers: { "Content-Type": "application/json", },
       body: JSON.stringify(userData), 
