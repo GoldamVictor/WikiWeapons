@@ -20,18 +20,29 @@ const changeUrl = (newUrl) => {
   window.location.href = newUrl;
 };
 
-const loginButtonHandler = () => {
+const loginButtonHandler = async () => {
   const userEmail = document.getElementById("email").value;
   const userPassword = document.getElementById("password").value;
-
-  if (userEmail == "xx@gmail.com" && userPassword == "123") {
-    const validUser = {
-      email: userEmail,
-      isValid: true,
-    };
-    localStorage.setItem("user", JSON.stringify(validUser));
-    changeUrl("index.html");
-  } else {
-    errorRender("Credenciales Inválidas", "oe, usted puso eso maaaaal D:<");
+  const userData = { email: userEmail, password: userPassword, };
+  
+  try{
+    const response = await fetch("http://localhost:3000/auth", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", },
+      body: JSON.stringify(userData), 
+    });
+    
+    if (response.ok) {
+      const validUser = await response.json();
+      localStorage.setItem("user", JSON.stringify(validUser));
+      
+      changeUrl("index.html");
+    } else {
+      const errorText = await response.text();
+      errorRender("Credenciales Inválidas", errorText);
+    }
+  } catch (error) { 
+    console.error("Error during fetch:", error);
+    errorRender("Error de conexión", "Hubo un problema al conectar con el servidor.");
   }
 };
